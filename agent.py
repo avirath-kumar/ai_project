@@ -17,6 +17,8 @@ response = requests.post(url, json=data, headers=headers)
 
 # handle api call output
 if response.status_code == 200:
-    print(response.json())
+    print(response.json()['choices'][0]['message']['content']) # syntax to isolate the 'content' dict
 else:
-    print(f"Error: {response.json()}") #might need to edit this based on what kind of error gets returned
+    print(f"Error: {response.json()}") # might need to edit this based on what kind of error gets returned
+
+# DELETE BEARER TOKEN BEFORE PUSHING
