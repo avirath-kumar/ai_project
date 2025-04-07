@@ -13,7 +13,7 @@ cursor = conn.cursor()
 # Step 3: create table based on csv headers
 columns = df.columns.tolist()
 column_definitions = ", ".join([f'"{col}" TEXT' for col in columns]) # f string expression to create SQL data types expressions to create tables
-table_name = "02_06_25_close"
+table_name = "feb0625Close"
 
 create_table_query = f'CREATE TABLE IF NOT EXISTS "{table_name}" ({column_definitions})'
 cursor.execute(create_table_query)
